@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="A JavaScript card shuffler with a Wild West theme."
+    />
+
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,16 +28,20 @@
       <main>
         <div class="card-container">
           <div class="cards">
-            <div class="card draw-pile"></div>
-            <div class="card discard-pile"></div>
+            <button
+              class="card draw-pile"
+              type="button"
+              aria-label="Draw a card"
+            ></button>
+            <div class="card discard-pile">Discard</div>
           </div>
 
-          <p class="shuffler-text" aria-live="polite"></p>
+          <p class="shuffler-text" aria-live="polite">Click the deck to draw</p>
           <button class="restart-btn" type="button">Restart Shuffle</button>
         </div>
       </main>
       <footer>
-        <div class="credits"></div>
+        <p class="credits">Built by: Ekan Essien-Udoedi</p>
       </footer>
     </div>
 

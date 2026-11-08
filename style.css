@@ -10,6 +10,8 @@
   --text-color: #3b2a1e;
   --red-color: #8b2e2e;
   --blue-color: #3f5e7e;
+  --background-color: #3a2a20;
+  --button-hover-background-color: #c9994a;
 }
 
 html {
@@ -23,17 +25,31 @@ body {
   font-size: 1.8rem;
   color: var(--text-color);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  background-color: var(--background-color);
+  background-image:
+    linear-gradient(rgba(58, 42, 32, 0.8), rgba(58, 42, 32, 0.8)),
+    url("./images/background-denim.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
   background-color: var(--primary-color);
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      transparent 55%,
+      rgba(59, 42, 30, 0.25) 100%
+    ),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.23  0 0 0 0 0.16  0 0 0 0 0.12  0 0 0 0.3 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   min-height: 400px;
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   border: 2px solid var(--text-color);
   border-radius: 10px;
   display: flex;
@@ -48,19 +64,142 @@ header {
   padding: 25px;
 }
 
+main {
+  width: 100%;
+}
+
 .title {
   font-family: "Rye", serif;
+  font-weight: 400;
 }
 
 .card-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  border: 1px solid var(--text-color);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  /* padding: 0 50px; */
+  gap: 6rem;
 }
 
 .card {
-  height: 14rem;
-  width: 10rem;
+  border: 2px solid var(--text-color);
+  height: 28rem;
+  width: 20rem;
+  border-radius: 10px;
+  /* background-color: var(--red-color); */
+}
+
+button.draw-pile {
+  position: relative;
+  background-image: url(./images/card-back-red.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: sepia(0.35) contrast(0.95);
+  padding: 0;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+  box-shadow: 0 4px 10px rgba(59, 42, 30, 0.35);
+}
+
+button.draw-pile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--red-color);
+  mix-blend-mode: multiply;
+  opacity: 0.09;
+}
+
+/* For phone responsiveness */
+@media (hover: hover) {
+  button.draw-pile:hover {
+    transform: translateY(-4px);
+  }
+}
+
+button.draw-pile:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 4px rgba(59, 42, 30, 0.35);
+}
+button.draw-pile:focus-visible {
+  outline: 3px solid var(--blue-color);
+  outline-offset: 4px;
+}
+
+.discard-pile {
+  border: 2px dashed var(--blue-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 5px;
+}
+
+p.shuffler-text {
+  margin: 4px 0;
+}
+
+button.restart-btn {
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  background-color: var(--accents-color);
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    background-color 0.2s,
+    box-shadow 0.1s;
+  box-shadow: 0 4px 0 var(--text-color);
+  visibility: hidden;
+}
+
+/* For phone responsiveness */
+@media (hover: hover) {
+  button.restart-btn:hover {
+    background-color: var(--button-hover-background-color);
+  }
+}
+
+button.restart-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--text-color);
+}
+
+button.restart-btn:focus-visible {
+  outline: 3px solid var(--blue-color);
+  outline-offset: 3px;
+}
+
+.credits {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--blue-color);
+}
+
+/* RESPONSIVENESS*/
+@media (max-width: 520px) {
+  .cards {
+    gap: 2rem;
+  }
+
+  .card {
+    width: 14rem;
+    height: 19.6rem;
+  }
 }
