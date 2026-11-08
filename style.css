@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #e8d9b5;
+  --accents-color: #b8893b;
+  --text-color: #3b2a1e;
+  --red-color: #8b2e2e;
+  --blue-color: #3f5e7e;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Special Elite", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--primary-color);
+  min-height: 400px;
+  width: 100%;
+  max-width: 700px;
+  border: 2px solid var(--text-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.title {
+  font-family: "Rye", serif;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid var(--text-color);
+}
+
+.card {
+  height: 14rem;
+  width: 10rem;
+}
