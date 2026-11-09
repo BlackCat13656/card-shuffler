@@ -84,7 +84,6 @@ main {
 .cards {
   display: flex;
   justify-content: center;
-  /* padding: 0 50px; */
   gap: 6rem;
 }
 
@@ -93,7 +92,6 @@ main {
   height: 28rem;
   width: 20rem;
   border-radius: 10px;
-  /* background-color: var(--red-color); */
 }
 
 button.draw-pile {
@@ -132,6 +130,7 @@ button.draw-pile:active {
   transform: translateY(1px) scale(0.98);
   box-shadow: 0 1px 4px rgba(59, 42, 30, 0.35);
 }
+
 button.draw-pile:focus-visible {
   outline: 3px solid var(--blue-color);
   outline-offset: 4px;
