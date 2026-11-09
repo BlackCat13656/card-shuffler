@@ -29,11 +29,12 @@ A Wild West themed card shuffler built with HTML, CSS, and vanilla JavaScript. I
 
 ## What I learned
 
-- [One or two sentences, such as how you built the shuffle, handled click events, or used CSS variables for theming]
+- [- Layering background images, gradients, and SVG textures to give the container an aged paper look
+- Using CSS custom properties to keep the color palette in one place, so the whole theme can change from `:root`]
 
 ## Credits
 
-- Card back: [Colorful Poker Card Back](https://opengameart.org/content/colorful-poker-card-back) by jeffshee, via OpenGameArt (add the license listed on that page)
+- Card back: [Colorful Poker Card Back](https://opengameart.org/content/colorful-poker-card-back) by jeffshee, via OpenGameArt
 - Background: [Blue denim fabric with twill weave](https://unsplash.com/photos/blue-denim-fabric-with-twill-weave-VgEaUEyKUpk) by dylanhendricks, via Unsplash
 
 ## Author
