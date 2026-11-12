@@ -17,31 +17,55 @@ const deck = [];
 
 deckMaker();
 
-function startShuffler() {
-  if (deck.length != 0) {
+function drawCard() {
+  if (deck.length === 52) {
     restartBtn.style.visibility = "visible";
   }
 
+  if (deck.length === 0) {
+    drawPile.disabled = true;
+    cardValueText.textContent = "No more cards in the deck!";
+  }
+
   const [card] = cardSelection();
-  cardValueText.innerText = [...card];
+  const [value, suit] = card;
+  cardValueText.textContent = `${value} of ${suit}`;
 }
 
 // Generate a 52 standard card deck
 function deckMaker() {
-  for (let i = 1; i < 14; i++) {
-    for (let j = 1; j < 5; j++) {
-      deck.push([i, j]);
+  const values = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K",
+  ];
+
+  const suits = ["♠", "♥", "♦", "♣"];
+
+  for (let i = 0; i < values.length; i++) {
+    for (let j = 0; j < suits.length; j++) {
+      deck.push([values[i], suits[j]]);
     }
   }
 }
 
 // extracts a single card from deck and returns it, deck updated
 function cardSelection() {
-  const deckSize = deck.length;
-  const cardPosition = Math.floor(Math.random() * deckSize);
+  const deckLength = deck.length;
+  const cardPosition = Math.floor(Math.random() * deckLength);
   const card = deck.splice(cardPosition, 1);
   return card;
 }
 
 // EVENT LISTENERS
-drawPile.addEventListener("click", startShuffler);
+drawPile.addEventListener("click", drawCard);
