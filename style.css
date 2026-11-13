@@ -12,6 +12,7 @@
   --blue-color: #3f5e7e;
   --background-color: #3a2a20;
   --button-hover-background-color: #c9994a;
+  --card-front-color: #f9f8e2;
 }
 
 html {
@@ -150,6 +151,7 @@ button.draw-pile:focus-visible {
   align-items: center;
   justify-content: center;
   letter-spacing: 0;
+  background-color: var(--card-front-color);
 }
 
 .card-top-value,

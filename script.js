@@ -21,6 +21,12 @@ function drawCard() {
   const [card] = cardSelection();
   const [value, suit] = card;
 
+  if (suit === "♥" || suit === "♦") {
+    discardPile.style.color = "var(--red-color)";
+  } else {
+    discardPile.style.color = "var(--text-color)";
+  }
+
   discardPile.innerHTML = `<div class="card-top-value">
                 <span class="value">${value}</span>
                 <span class="suit">${suit}</span>
@@ -67,5 +73,9 @@ function cardSelection() {
   return card;
 }
 
+//PENDIENTE
+function restartShuffle() {}
+
 // EVENT LISTENERS
 drawPile.addEventListener("click", drawCard);
+restartBtn.addEventListener("click", restartShuffle);
