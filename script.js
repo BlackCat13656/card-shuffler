@@ -1,16 +1,6 @@
-// player clicks draw pile
-// start Button appears
-// generateDeck ()
-// if (!lastCard)
-// drawCard()
-// -random draw card get put into discard pile facing up and showing its value
-// -card value text appears on paragraph container
-// else
-// showLastCard()
-
 const drawPile = document.querySelector(".draw-pile");
 const discardPile = document.querySelector(".discard-pile");
-const cardValueText = document.querySelector(".shuffler-text");
+const textLabel = document.querySelector(".text-label");
 const restartBtn = document.querySelector(".restart-btn");
 
 const deck = [];
@@ -20,16 +10,26 @@ deckMaker();
 function drawCard() {
   if (deck.length === 52) {
     restartBtn.style.visibility = "visible";
+    discardPile.classList.add("active");
+    textLabel.classList.add("active");
   }
 
-  if (deck.length === 0) {
+  if (deck.length === 1) {
     drawPile.disabled = true;
-    cardValueText.textContent = "No more cards in the deck!";
   }
 
   const [card] = cardSelection();
   const [value, suit] = card;
-  cardValueText.textContent = `${value} of ${suit}`;
+
+  discardPile.innerHTML = `<div class="card-top-value">
+                <span class="value">${value}</span>
+                <span class="suit">${suit}</span>
+              </div>
+              <div class="card-middle-value">${suit}</div>
+              <div class="card-bottom-value">
+                <span class="value">${value}</span>
+                <span class="suit">${suit}</span>
+              </div>`;
 }
 
 // Generate a 52 standard card deck

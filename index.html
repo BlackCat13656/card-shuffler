@@ -18,6 +18,11 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🃏</text></svg>"
+    />
+
     <title>Card Shuffler</title>
   </head>
   <body>
@@ -33,10 +38,12 @@
               type="button"
               aria-label="Draw a card"
             ></button>
-            <div class="card discard-pile">Discard</div>
+            <div class="card discard-pile">
+              <span class="discard-label">Discard</span>
+            </div>
           </div>
 
-          <p class="shuffler-text" aria-live="polite">Click the deck to draw</p>
+          <p class="text-label" aria-live="polite">Click the deck to draw</p>
           <button class="restart-btn" type="button">Restart Shuffle</button>
         </div>
       </main>
