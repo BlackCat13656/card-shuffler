@@ -4,7 +4,7 @@ A Wild West themed card shuffler built with HTML, CSS, and vanilla JavaScript. I
 
 **Live demo:** In progress
 
-**Screenshot:** In progress
+![Card Shuffler screenshot](images/card-shuffler-screenshot.png)
 
 ## Features
 
@@ -29,8 +29,15 @@ A Wild West themed card shuffler built with HTML, CSS, and vanilla JavaScript. I
 
 ## What I learned
 
-- [- Layering background images, gradients, and SVG textures to give the container an aged paper look
-- Using CSS custom properties to keep the color palette in one place, so the whole theme can change from `:root`]
+- Building a 52-card deck with nested loops
+- Drawing a random card with `splice` so no card repeats
+- Handling game state: first draw, last card, and restart
+- Updating the page with event listeners and `classList`
+- Layering gradients, SVG textures, and blend modes for an aged paper look
+- Using CSS custom properties to keep the color palette in one place
+- Styling hover, focus, and disabled states, and making the layout responsive
+- Using semantic HTML and keyboard-friendly buttons
+- Debugging with DevTools and using Git and GitHub
 
 ## Credits
 
