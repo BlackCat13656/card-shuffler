@@ -2,7 +2,7 @@
 
 A Wild West themed card shuffler built with HTML, CSS, and vanilla JavaScript. It builds a standard 52-card deck, shuffles it, and lets you draw cards one at a time with no repeats.
 
-**Live demo:** In progress
+**Live demo:** [View it here](https://blackcat13656.github.io/card-shuffler/)
 
 ![Card Shuffler screenshot](images/card-shuffler-screenshot.png)
 
