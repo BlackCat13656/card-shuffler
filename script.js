@@ -2,13 +2,16 @@ const drawPile = document.querySelector(".draw-pile");
 const discardPile = document.querySelector(".discard-pile");
 const textLabel = document.querySelector(".text-label");
 const restartBtn = document.querySelector(".restart-btn");
+const FULL_DECK_SIZE = 52;
 
 const deck = [];
 
 deckMaker();
 
 function drawCard() {
-  if (deck.length === 52) {
+  if (deck.length === 0) return; // prevents errors if the function gets called unexpectedly
+
+  if (deck.length === FULL_DECK_SIZE) {
     restartBtn.style.visibility = "visible";
     discardPile.classList.add("active");
     textLabel.classList.add("active");
@@ -18,6 +21,7 @@ function drawCard() {
     drawPile.disabled = true;
     textLabel.classList.remove("active");
     textLabel.textContent = "That's the last card, partner!";
+    restartBtn.focus();
   }
 
   const [card] = cardSelection();

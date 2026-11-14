@@ -127,7 +127,6 @@ button.draw-pile:disabled {
   box-shadow: none;
 }
 
-/* For phone responsiveness */
 @media (hover: hover) {
   button.draw-pile:not(:disabled):hover {
     transform: translateY(-4px);
@@ -209,7 +208,6 @@ button.restart-btn {
   visibility: hidden;
 }
 
-/* For phone responsiveness */
 @media (hover: hover) {
   button.restart-btn:hover {
     background-color: var(--button-hover-background-color);
