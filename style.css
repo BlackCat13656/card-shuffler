@@ -120,14 +120,21 @@ button.draw-pile::after {
   opacity: 0.09;
 }
 
+button.draw-pile:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(1) contrast(0.95);
+  box-shadow: none;
+}
+
 /* For phone responsiveness */
 @media (hover: hover) {
-  button.draw-pile:hover {
+  button.draw-pile:not(:disabled):hover {
     transform: translateY(-4px);
   }
 }
 
-button.draw-pile:active {
+button.draw-pile:not(:disabled):active {
   transform: translateY(1px) scale(0.98);
   box-shadow: 0 1px 4px rgba(59, 42, 30, 0.35);
 }
@@ -161,8 +168,8 @@ button.draw-pile:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1rem;
-  font-size: 3rem;
+  padding: 0.8rem;
+  font-size: 2.4rem;
   line-height: 1;
 }
 
@@ -232,7 +239,17 @@ button.restart-btn:focus-visible {
   }
 
   .card {
-    width: 14rem;
-    height: 19.6rem;
+    width: 13rem;
+    height: 18.2rem;
+  }
+
+  .card-top-value,
+  .card-bottom-value {
+    padding: 0.4rem;
+    font-size: 1.6rem;
+  }
+
+  .card-middle-value {
+    font-size: 6rem;
   }
 }

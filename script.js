@@ -16,6 +16,8 @@ function drawCard() {
 
   if (deck.length === 1) {
     drawPile.disabled = true;
+    textLabel.classList.remove("active");
+    textLabel.textContent = "That's the last card, partner!";
   }
 
   const [card] = cardSelection();
@@ -73,8 +75,21 @@ function cardSelection() {
   return card;
 }
 
-//PENDIENTE
-function restartShuffle() {}
+function restartShuffle() {
+  deck.length = 0;
+  deckMaker();
+
+  discardPile.classList.remove("active");
+  discardPile.innerHTML = `<span class="discard-label">Discard</span>`;
+  discardPile.style.color = "";
+
+  textLabel.classList.remove("active");
+  textLabel.textContent = "Click the deck to draw";
+  restartBtn.style.visibility = "hidden";
+  drawPile.disabled = false;
+
+  drawPile.focus();
+}
 
 // EVENT LISTENERS
 drawPile.addEventListener("click", drawCard);
